@@ -14,21 +14,17 @@ public class Main {
         fourthTask(2, smth);
 
         List<Employee> employees = new ArrayList<>();
-        employees.add(new Employee("John", 30));
+        employees.add(new Employee("John", 10));
         employees.add(new Employee("Jane", 30));
         employees.add(new Employee("Bob", 30));
 
-        List<String> names = Employee.getEmloyeesName(employees);
-        System.out.println(names);
+        System.out.println(Employee.getEmloyeesName(employees));
 
-        List<String> age = Employee.getMinAge(employees, 30);
-        System.out.println(age);
+        System.out.println(Employee.getMinAge(employees, 30));
 
-        boolean avgAge = Employee.checkAverageAge(employees, 35);
-        System.out.println(avgAge);
+        //System.out.println(Employee.checkAverageAge(employees, 35));
 
-        Employee em = Employee.getYoungest(employees);
-        System.out.println(em);
+        System.out.println(Employee.getYoungest(employees));
     }
 
     /***

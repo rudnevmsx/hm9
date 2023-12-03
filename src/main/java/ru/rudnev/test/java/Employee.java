@@ -54,25 +54,16 @@ public class Employee {
     }
 
     /***
-     * @param list
-     * @param reqAge
      * @return
      * Реализуйте метод, принимающий в качестве аргумента список сотрудников и минимальный средний возраст
      * и проверяющий что средний возраст сотрудников превышает указанный аргумент;
      */
-    public static boolean checkAverageAge(List<Employee> list, int reqAge){
-        List<Integer> ages = new ArrayList<>();
-        int sum = 0;
-        for (Employee employee : list){
-            ages.add(employee.getAge());
+    public static boolean checkAverageAge(ArrayList<Employee> employees, int minAverageAge){
+        int totalAge = 0;
+        for (Employee employee : employees) {
+            totalAge += employee.getAge();
         }
-        for (int i = 0; i < ages.size(); i++) {
-            sum += ages.get(i);
-        }
-        if (sum / ages.size() == reqAge){
-            return true;
-        }
-        return false;
+        return employees.size() > 0 && (totalAge / employees.size()) > minAverageAge;
     }
 
     public static Employee getYoungest(List<Employee> employees){
